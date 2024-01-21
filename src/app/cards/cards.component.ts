@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-cards',
@@ -12,26 +12,11 @@ import { CommonModule } from '@angular/common';
 export class CardsComponent {
   cards: any;
 
-  constructor(private http: HttpClient) {
-    this.getAllCards();
-  }
-
-  getAllCards() {
-    this.http.get("http://localhost:8080/api/v1/cards")
-    .subscribe((response) => {
-      this.cards = response;
-    })
+  constructor(private dataService: DataService) {
+    this.cards = dataService.cards;
   }
 
   deleteCard(id: number) {
-    this.http.delete("http://localhost:8080/api/v1/cards/" + id).subscribe(
-      () => {
-        console.log('DELETE request successful');
-        this.cards = this.cards.filter((element: any) => element.id !== id);
-      },
-      (error) => {
-        console.error('Error during DELETE request:', error);
-      }
-    )  
+    this.dataService.deleteCard(id);
   }
 }
