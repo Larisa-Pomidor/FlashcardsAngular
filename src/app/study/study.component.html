@@ -8,9 +8,10 @@
                 {{ card.back }}
             </div>
             <div *ngIf="card.image_url != ''" class="flip-card__image">
-                <img src="" alt="">
+                <img [src]="card.imageUrl" alt="">                
             </div>
         </div>
+        
         <div class="flip-card__control">
             <div class="flip-card__control-item flip-card__control-item_success" (click)="changeCard()">
                 ✔

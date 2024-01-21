@@ -17,3 +17,18 @@
 .cards__item:nth-child(2n) {
     background: rgba(128, 128, 128, 0.115);
 }
+.cards__add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background: black;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    margin-top: -20px;
+    border: solid 5px white;
+    padding-top: 10px;
+    cursor: pointer;
+}

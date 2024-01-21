@@ -4,7 +4,8 @@ import { AddComponent } from './add/add.component';
 import { CardsComponent } from './cards/cards.component';
 
 export const routes: Routes = [
-    {path: '', component: StudyComponent},
+    {path: '', component: CardsComponent},
+    {path: 'study', component: StudyComponent},
     {path: 'cards', component: CardsComponent},
     {path: 'add', component: AddComponent}
 ];

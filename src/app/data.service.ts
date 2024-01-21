@@ -29,4 +29,15 @@ export class DataService {
       }
     );  
   }
+
+  addCard(formData: any) {
+    this.http.post('http://localhost:8080/api/v1/cards', formData).subscribe(
+      (response) => {
+        console.log('Card ADDED');
+      },
+      (error) => {
+        console.error('Error during ADDING', error);
+      }
+    );
+  }
 }
